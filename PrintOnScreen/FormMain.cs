@@ -95,15 +95,16 @@ public partial class FormMain : Form
 		switch (_pressedKey)
 		{
 			case ControlEnum.Ctrl1:
-				DrawHeader(g, "Test 1234");
+				DrawHeader(g, "SQL queries for unmapped types");
 				break;
 			case ControlEnum.Ctrl2:
-				DrawAtLocation(g, "At Mousepoint", _location);
+				DrawHeader(g, "JSON kolommen");
 				break;
 			case ControlEnum.Ctrl3:
-				DrawAtLocation(g, "At Mousepoint\n123", _location);
+				DrawHeader(g, "Primitive Collections");
 				break;
 			case ControlEnum.Ctrl4:
+				DrawHeader(g, "Immutable classes en records");
 				break;
 			case ControlEnum.Ctrl5:
 				break;
@@ -116,7 +117,9 @@ public partial class FormMain : Form
 			case ControlEnum.Ctrl9:
 				break;
 			case ControlEnum.Ctrl10:
+				DrawAtLocation(g, "TagWith", _location);
 				break;
+			
 			default:
 				throw new ArgumentOutOfRangeException();
 		}
