@@ -98,13 +98,13 @@ public partial class FormMain : Form
 				DrawHeader(g, "SQL queries for unmapped types");
 				break;
 			case ControlEnum.Ctrl2:
-				DrawHeader(g, "JSON kolommen");
+				DrawHeader(g, "Primitive Collections");
+				DrawHeader(g, "JSON kolommen", 360);
 				break;
 			case ControlEnum.Ctrl3:
-				DrawHeader(g, "Primitive Collections");
+				DrawHeader(g, "Immutable classes en records");
 				break;
 			case ControlEnum.Ctrl4:
-				DrawHeader(g, "Immutable classes en records");
 				break;
 			case ControlEnum.Ctrl5:
 				break;
@@ -125,14 +125,13 @@ public partial class FormMain : Form
 		}
 	}
 
-	private static void DrawHeader(Graphics g, string text)
+	private static void DrawHeader(Graphics g, string text, int top = 200)
 	{
 		var font = new Font(FontFamily.GenericSansSerif, 48);
 		var size = g.MeasureString(text, font);
 
 		var background = new SolidBrush(Color.FromArgb(128, 255, 255, 255));
 		var left = Convert.ToInt32(0.5 * (g.VisibleClipBounds.Width - size.Width));
-		const int top = 200;
 
 		g.FillRectangle(background, left - 10, top - 10, size.Width + 20, size.Height + 20);
 		g.DrawString(text, font, Brushes.Black, left, top);
